@@ -151,14 +151,68 @@
 
 ///////// CALLBACKS /////////
 
-let someFunctionWithCallback = (someMessage, someCallback) => {
-	someCallback(someMessage);
+// let someFunctionWithCallback = (someMessage, someCallback) => {
+// 	someCallback(someMessage);
+// };
+
+// someFunctionWithCallback("Hello", console.log);
+
+// let someForm = (inputBox, callback) => {
+// 	callback(inputBox);
+// };
+
+// someForm(emailBox, validateEmail);
+
+// // Block and scope
+// let counter = 0;
+// for (let index = 0; index <= 10; index++) {
+// 	let counter = 5;
+// 	counter++;
+// }
+
+///////// CLOSURES /////////
+
+// function gameData() {
+// 	let highScore = 0;
+
+// 	function setHighScore(newNumber) {
+// 		highScore = newNumber;
+// 	}
+
+// 	setHighScore(99):
+// 	return highScore;
+// }
+
+///////// FUNCTIONS IN OBJECTS /////////
+let pikachu = {
+	name: "Pikachu",
+	type: "Electric",
+	attack: function () {
+		console.log("Pikachu used thunderbolt!");
+	},
+	ability: () => {
+		console.log("Some ability was triggered!! Woohoo!");
+	},
+	hobbies: {
+		cycling: {
+			skillLevel: "high",
+		},
+	},
 };
 
-someFunctionWithCallback("Hello", console.log);
+let pikachuAbility = pikachu.ability;
+pikachu.attack();
+pikachuAbility.ability();
+let pickahuCyclingSkillLevel = pikachu.hobbies.cycling.skillLevel;
+let {
+	ability,
+	attack,
+	name,
+	type: {
+		cycling: { skillLevel },
+	},
+} = pikachu;
 
-let someForm = (inputBox, callback) => {
-	callback(inputBox);
-};
-
-someForm(emailBox, validateEmail);
+console.log(
+	"Pickachuus cycling skill with dot notation: " + pickahuCyclingSkillLevel
+);
