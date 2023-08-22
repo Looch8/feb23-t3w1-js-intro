@@ -1,3 +1,5 @@
 # feb23-t3w1-js-intro
 
-Week 1
+node -v
+
+Shows the version of node that is activated
