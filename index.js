@@ -7,6 +7,9 @@ const promptInstance = promptSync({
 let userInput = null;
 let userEnteredNumber = false;
 
+// Some comment here
+// Nodemon will restart the server when you save
+
 do {
 	userInput = promptInstance("What is the coolest number in the universe? ");
 
